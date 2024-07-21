@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg sticky-top bg-dark border-bottom" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img ngSrc="/assets/logo/netflix.png" priority alt="netflix-logo" width="100" height="30.45"
+      class="d-inline-block align-text-top" >
+    </a>
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+      <div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <form class="d-flex input-group" role="search">
+          <span class="input-group-text">
+            <fa-icon icon="search" ></fa-icon>
+          </span>
+          <input [ngModel]="searchTerm" (ngModelChange)="onSearch($event)" name="search"
+          class="form-control me-2"
+          type="search"
+          placeholder="Search" aria-label="">
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!--
+    'ngSrc' est un attribut utilisé par Angular pour lier l'image dynamiquement.
+    'priority' est un attribut qui peut être utilisé pour donner une priorité de chargement élevée à cette image.
+    'alt' fournit un texte alternatif pour l'image, utile pour l'accessibilité et le référencement.
+    'width' et 'height' spécifient la taille de l'image.
+    'd-inline-block' est une classe Bootstrap qui rend l'image un élément inline block.
+    'align-text-top' aligne l'image en haut du texte environnant.
+
+    Le 'height' est calculé par rapport à la 'width' en utilisant un ratio :
+        Ratio de Hauteur = Hauteur / Largeur
+        Dans ce cas : Ratio de Hauteur = 30.45 / 100 = 0.3045
+        Cela signifie que la hauteur est environ 30.45% de la largeur.
+
+
+        Si vous avez une autre image et que vous connaissez ses dimensions originales, vous pouvez calculer le ratio de la même manière.
+        Par exemple, si une image a une largeur originale de 200 pixels et une hauteur de 80 pixels, le ratio serait :
+
+        Ratio de Hauteur = 80 / 200 = 0.4
+
+        Donc, si vous spécifiez une largeur de 100 pixels pour cette image, la hauteur devrait être :
+
+        Hauteur = 100 * 0.4 = 40 pixels
+  -->
